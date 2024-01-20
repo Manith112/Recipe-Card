@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+:root{
+    --Nutmeg: hsl(14, 45%, 36%);
+--Dark-Raspberry: hsl(332, 51%, 32%);
+--White: hsl(0, 0%, 100%);
+--Rose-White: hsl(330, 100%, 98%);
+--Eggshell: hsl(30, 54%, 90%);
+--Light-Grey: hsl(30, 18%, 87%);
+--Wenge-Brown: hsl(30, 10%, 34%);
+--Dark-Charcoal: hsl(24, 5%, 18%);
+}
+*{
+   
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--Eggshell);
+}
+.container{
+    background-color: var(--White);
+    border-radius: 10px;
+    padding: 30px;
+    width: 660px;
+    margin: 40px 0;
+}
+
+.container > .image{
+    width: 600px;
+    border-radius: 10px; 
+    animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0; /* Start with fully transparent */
+    }
+    to {
+      opacity: 1; /* End with fully opaque */
+    }
+  }
+.simple{
+    padding: 10px 0;
+    font-family: 'Young Serif', serif;
+    font-weight: 400;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); /* Start, bounce, settle, bounce, end */
+    }
+    40% {
+      transform: translateY(-30px); /* Bounce up */
+    }
+    60% {
+      transform: translateY(-25px); /* Bounce down */
+    }
+  }
+.para{
+    color: var(--Wenge-Brown);
+}
+.box{
+    margin: 20px 0;
+    padding: 20px;
+    border: none;
+    background-color: rgb(251, 237, 239);
+    border-radius: 10px;
+}
+.box > p{
+    color: var(--Dark-Raspberry);
+    font-weight: 600;
+    font-size: 20px;
+}
+.box > ul{
+    list-style: none;
+    padding:10px ;
+}
+.box  ul  li::before{
+    content: '\2022'; /* Unicode character for a bullet point */
+    color: var(--Dark-Raspberry); /* Change this to the desired color (hex, RGB, etc.) */
+    font-size: 1.2em; /* Adjust the font size if needed */
+    margin-right: 1.5em; /* Add some spacing between the bullet and the text */
+}
+.box > ul > li {
+    color: var(--Wenge-Brown);
+    line-height: 30px;
+}
+.box > ul > li > span{
+    color: var(--Wenge-Brown);
+    font-weight: 800;
+}
+.ingredient , .nutrition{
+    font-family: 'Young Serif', serif;
+    color: var(--Nutmeg);
+    font-weight: 400;
+    font-size: 30px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.five-list{
+    list-style: none;
+}
+.five-list > li{
+    color: var(--Wenge-Brown);
+    line-height: 30px;
+}
+.five-list li::before{
+    content: '\2022'; /* Unicode character for a bullet point */
+    color: var(--Nutmeg); /* Change this to the desired color (hex, RGB, etc.) */
+    font-size: 1.2em; /* Adjust the font size if needed */
+    margin-right: 1.5em; /* Add some spacing between the bullet and the text */
+}
+hr{
+    margin: 25px 0;
+    opacity: 0.3;
+}
+.instruction{
+    font-family: 'Young Serif', serif;
+    color: var(--Nutmeg);
+    font-weight: 400;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+.six-lists {
+    list-style: none;
+}
+.six-lists li{
+    counter-increment: item;
+    padding-bottom: 10px;
+    line-height: 25px;
+    color: var(--Wenge-Brown);
+    animation: fadeIn 5s ease-in-out;
+}
+.six-lists li::before{
+    content: counter(item) ". "; /* Use the 'counter()' function to display the number */
+    color: var(--Nutmeg); /* Change this to the desired color (hex, RGB, etc.) */
+    font-weight: bold; /* Optional: Make the numbers bold */
+    margin-right: 1.5em; /* Add some spacing between the number and the text */
+}
+.six-lists > li >span{
+    color: var(--Wenge-Brown);
+    font-weight: 800;
+}
+.table{
+    color: var(--Wenge-Brown);
+    padding: 10px 0;
+}
+.four-bottom{
+    display: flex;
+    padding: 15px 40px;
+    justify-content: space-between;
+}
+.four-bottom > .first {
+    color: var(--Wenge-Brown);
+}
+.four-bottom > .second{
+    color: var(--Nutmeg);
+    font-weight: 800;
+  padding-right: 40px;
+    /* padding-left: 200px; */
+}
+.footer{
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 700px){
+    .container{
+        background-color: var(--White);
+        border-radius: 10px;
+        padding: 30px;
+        width: 460px;
+        margin: 20px 0;
+    }
+    
+    .container > .image{
+        width: 400px;
+        border-radius: 10px; 
+    }
+}
+@media screen and (max-width: 500px){
+    .container{
+        background-color: var(--White);
+        border-radius: 10px;
+        padding: 0px;
+        width: 300px;
+        margin: 20px 0;
+    }
+    
+    .container > .image{
+        width: 300px;
+        border-radius: 10px 10px 0 0; 
+    }
+    .body{
+        padding: 0 15px;
+    }
+    .box  ul  li::before{
+margin-right: 0.5em;
+    }
+}
